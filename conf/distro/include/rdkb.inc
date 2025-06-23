@@ -129,6 +129,9 @@ BBMASK .= "|./meta-rdk/recipes-common/rdkversion/"
 DISTRO_FEATURES:append = " telemetry2_0"
 DISTRO_FEATURES:append = " snmppa"
 
+# Distro feature for enabling RBUS Test APPS
+DISTRO_FEATURES:append = "RBUS_ENABLE_TESTAPPS"
+
 # add new breakpad framework for RDKB
 DISTRO_FEATURES:append  = " logbacktrace"
 require conf/distro/include/rdkb_backtrace_log.inc

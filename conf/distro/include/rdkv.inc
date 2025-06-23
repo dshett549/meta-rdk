@@ -139,5 +139,7 @@ include conf/distro/include/rdkv-cpc.inc
 # Distro feature for NetworkManager
 DISTRO_FEATURES:append = " ENABLE_NETWORKMANAGER"
 
+# Distro feature for enabling RBUS_TEST_APPS
+DISTRO_FEATURES:append = "RBUS_ENABLE_TESTAPPS"
 #Distro feature for WPEFramework SecurityUtility Disable
 DISTRO_FEATURES:append = " wpe_security_util_disable"
