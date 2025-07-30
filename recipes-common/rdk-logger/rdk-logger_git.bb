@@ -7,11 +7,10 @@ PACKAGE_ARCH = "${MIDDLEWARE_ARCH}"
 PV ?= "1.0.0"
 PR ?= "r1"
 
-SRCREV = "a3bacc8b8660a03f3e4a1ebdb6cf466a8d190ecb"
+SRCREV = "${AUTOREV}"
 SRCREV_FORMAT = "rdklogger"
 
-
-SRC_URI = "${CMF_GITHUB_ROOT}/rdk_logger;${CMF_GITHUB_SRC_URI_SUFFIX}"
+SRC_URI = "git://github.com/dshett549/meta-rdk.git;branch=develop"
 
 S = "${WORKDIR}/git"
 
@@ -39,8 +38,8 @@ LDFLAGS:append = " ${@bb.utils.contains('DISTRO_FEATURES', 'safec', ' `pkg-confi
 
 do_configure:append:broadband () {
 		#Use the RDKB Versions of the Files
-		install -m 644 ${S}/rdkb_debug.ini ${S}/debug.ini
-		install -m 644 ${S}/rdkb_log4crc ${S}/log4crc
+		install -m 644 ${S}/debug.ini ${S}/debug.ini
+		install -m 644 ${S}/log4crc ${S}/log4crc
 }
 
 do_install:append () {
